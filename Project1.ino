@@ -17,19 +17,19 @@ void setup() {
   pinMode(2, INPUT);
   pinMode(6, OUTPUT);
   
-  while (0 != 1){     //Loop forever, but always check if button was pressed.
-    digitalWrite(11, HIGH);
+while (0 != 1){     //Loop forever, but always check if button was pressed.
+    digitalWrite(redLED, HIGH);
     for(i = 0; i < 100; i++) {    //Split one delay into smaller delays so button can be checked. 
-      delay(10);                  //Break must be called twice to first exit from for loop, then from while loop. 
+      delay(10);                  //Break must be called twice to first exit from for loop, then from while
       if (digitalRead(button) == 1) {
-        buttonState = 1;
+        buttonState = 1;    
         break;
       }
     }
     if (buttonState == 1){
       break;
     }
-    digitalWrite(11, LOW);
+    digitalWrite(redLED, LOW);
     for(i = 0; i < 100; i++) {
       delay(10);
       if (digitalRead(button) == 1) {
@@ -41,6 +41,7 @@ void setup() {
       break;
     }
   }
+}
   /*while (1 != 0) {
     if (digitalRead(button) == 1) {
       break;
